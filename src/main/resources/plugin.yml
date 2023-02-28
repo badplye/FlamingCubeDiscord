@@ -1,0 +1,11 @@
+name: OceanusDiscord
+version: '${project.version}'
+main: com.oceanusmc.dev.badplye.oceanusdiscord.OceanusDiscord
+api-version: 1.14
+prefix: OceanusDiscord
+load: STARTUP
+authors: [ badplye ]
+description: Discord bot hook
+website: https://oceanusmc.com
+softdepend: [MVdWPlaceholderAPI]
+depend: [PlaceholderAPI, Vault]

@@ -1,0 +1,24 @@
+# Database Settings
+db-host: 'localhost'
+db-port: '3306'
+
+db-database: 'myBot'
+
+db-username: 'myBot'
+db-password: 'password'
+
+# Bot Settings
+token: 'token'
+
+# Public Guild
+public-guild: '0'
+
+# Staff Guild
+staff-guild: '0'
+mod-log: '0'
+proof-exempt: '0, 0, 0'
+
+# Messages
+appeal-link: 'https://oceanusmc.com/appeal'
+icon-url: 'https://media.discordapp.net/attachments/774074424315215872/1069390588887175228/512x512.png'
+
