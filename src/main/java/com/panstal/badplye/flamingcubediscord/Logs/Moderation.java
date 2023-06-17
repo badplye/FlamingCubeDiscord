@@ -1,6 +1,6 @@
-package com.oceanusmc.dev.badplye.oceanusdiscord.Logs;
+package com.panstal.badplye.flamingcubediscord.Logs;
 
-import com.oceanusmc.dev.badplye.oceanusdiscord.OceanusDiscord;
+import com.panstal.badplye.flamingcubediscord.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.utils.TimeFormat;
@@ -9,11 +9,13 @@ import java.awt.*;
 
 public class Moderation {
 
-    public static EmbedBuilder staffLog(OceanusDiscord mcPlugin, String id, String type, String duration, User target, User sender, String reason, String proof) {
+    public static EmbedBuilder staffLog(boolean notice, Main mcPlugin, String id, String type, String duration, User target, User sender, String reason, String proof) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle("Punishment " + id);
         embed.setDescription("Punishment issued on " + TimeFormat.DATE_TIME_LONG.now());
-        embed.setFooter("OceanusMC", mcPlugin.getConfig().getString("icon-url"));
+        if(!notice)
+            embed.setDescription(":warning: *WARNING: No notice was sent to the user because they do not allow direct messages from server members.* \n\n Punishment issued on " + TimeFormat.DATE_TIME_LONG.now());
+        embed.setFooter("FlamingCube", mcPlugin.getConfig().getString("icon-url"));
         embed.addField("Type", type, true);
         embed.addField("Target", target.getAsMention(), true);
         embed.addField("Target ID", target.getId(), true);
@@ -27,11 +29,14 @@ public class Moderation {
 
         return embed;
     }
-    public static EmbedBuilder staffLog(OceanusDiscord mcPlugin, String id, String type, String duration, User target, User sender, String reason) {
+    public static EmbedBuilder staffLog(boolean notice, Main mcPlugin, String id, String type, String duration, User target, User sender, String reason) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle("Punishment " + id);
         embed.setDescription("Punishment issued on " + TimeFormat.DATE_TIME_LONG.now());
-        embed.setFooter("OceanusMC", mcPlugin.getConfig().getString("icon-url"));
+        if(notice == false) {
+            embed.setDescription(":warning: *WARNING: No notice was sent to the user because they do not allow direct messages from server members.* \n\n Punishment issued on " + TimeFormat.DATE_TIME_LONG.now());
+        }
+        embed.setFooter("FlamingCube", mcPlugin.getConfig().getString("icon-url"));
         embed.addField("Type", type, true);
         embed.addField("Target", target.getAsMention(), true);
         embed.addField("Target ID", target.getId(), true);
@@ -42,8 +47,5 @@ public class Moderation {
         embed.setColor(Color.RED);
 
         return embed;
-    }
-    private static void isExempt(User staff){
-
     }
 }

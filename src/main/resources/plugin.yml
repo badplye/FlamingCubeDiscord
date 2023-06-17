@@ -1,8 +1,8 @@
-name: OceanusDiscord
+name: FlamingCubeDiscord
 version: '${project.version}'
-main: com.oceanusmc.dev.badplye.oceanusdiscord.OceanusDiscord
-api-version: 1.14
-prefix: OceanusDiscord
+main: com.panstal.badplye.flamingcubediscord.Main
+api-version: 1.19
+prefix: FC-Discord
 load: STARTUP
 authors: [ badplye ]
 description: Discord bot hook

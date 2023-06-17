@@ -1,4 +1,4 @@
-package com.oceanusmc.dev.badplye.oceanusdiscord.Utilities;
+package com.panstal.badplye.flamingcubediscord.Utilities;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
